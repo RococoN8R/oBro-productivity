@@ -43,20 +43,20 @@ Feeling like you're drowning in a stormy sea of documents? Can't remember which 
 *Add this to any document to easily find the documents you recently updated*
 
 
-## Installation: Let's Get Started
+# Installation: Let's Get Started
 
 1. Go to **Settings** in your [Obsidian](https://www.obsidian.md/). Then go to **Community Plugins** and disable **Safe Mode**. This enables JavaScript libraries to run in your plugins
 2. Click on **Browse** and search for _**oBro**_
 3. Click **Install**
 4. Click the checkbox to enable the oBro plugin
 
-### Required: add Dataview if you don't already use it
+## Required: add Dataview if you don't already use it
 
 5. In **Community Plugins**, click on **Browse** and search for _**Dataview**_. This plugin provides data views powering oBro
 6. Click **Install**
 7. Click the checkbox to enable the Dataview plugin
 
-### Recommended, but optional
+## Recommended, but optional
 
 _**Tasks**_, by Clare Macrae, adds due dates, recurring tasks, done dates and sub-set of checklist items. 
 
