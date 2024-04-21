@@ -29,10 +29,27 @@ const DEFAULT_SETTINGS: oBroSettings = {
    taskHeaderSize: 5,
 };
 
-let statusBar;
+let statusBar: HTMLElement;
 
 export default class oBro extends Plugin {
    settings: oBroSettings;
+
+   // observer: MutationObserver | null = null;
+   // makeHeadersSticky() {
+   //    console.log("oBro: makeHeadersSticky");
+   //    // Get all headers in the document
+   //    const headers = document.querySelectorAll("h1, h2, h3");
+
+   //    console.log(headers);
+
+   //    headers.forEach(header => {
+   //       // Make header sticky
+   //       header.style.position = "sticky";
+   //       header.style.top = "0";
+   //       header.style.zIndex = "1000";
+   //       header.style.backgroundColor = "white"; // Change as per your theme
+   //    });
+   // }
 
    async onload() {
       await this.loadSettings();
@@ -49,15 +66,6 @@ export default class oBro extends Plugin {
          statusBar.createEl("span", { text: "" });
          statusBar.createEl("span", { text: "" });
 
-         // TODO add status for late and this week tasks
-         // make them link to the task and a modal with the task details
-         // const fruits = this.addStatusBarItem();
-         // fruits.createEl("span", { text: "🍎" });
-         // fruits.createEl("span", { text: "🍌" });
-
-         // const veggies = this.addStatusBarItem();
-         // veggies.createEl("span", { text: "🥦" });
-         // veggies.createEl("span", { text: "🥬" });
 
          // // register dataview command
          // this.addCommand({
@@ -70,31 +78,24 @@ export default class oBro extends Plugin {
       });
 
       // Wait for Obsidian to be fully loaded
-      addEventListener('DOMContentLoaded', function () {
-         console.log('oBro: "DOMContentLoaded" event has fired!');
-         // Function to make headers sticky
-         function makeHeadersSticky() {
-            // Get all headers in the document
-            const headers = document.querySelectorAll(
-               ".markdown-preview-section h1, .markdown-preview-section h2, .markdown-preview-section h3"
-            );
+      //addEventListener('DOMContentLoaded', function () {
+      // console.log(this.app.workspace);
+      // this.registerEvent(
+      //    this.app.workspace.on("quick-preview", () => {
+      //       console.log('oBro: "editor-preview" event has fired!');
+      //       this.makeHeadersSticky();
+      //    })
+      // );
 
-            headers.forEach(header => {
-               // Make header sticky
-               header.style.position = "sticky";
-               header.style.top = "0";
-               header.style.zIndex = "1000";
-               header.style.backgroundColor = "white"; // Change as per your theme
-            });
-         }
+      // this.observer = new MutationObserver(() => {
+      //    this.makeHeadersSticky();
+      // });
 
-         // Call the function to make headers sticky
-         makeHeadersSticky();
+      // const documentBody = document.querySelector("body");
+      // if (documentBody) {
+      //    this.observer.observe(documentBody, { childList: true, subtree: true });
+      // }
 
-         // Whenever the content of the note changes, make headers sticky again
-         window.obsidian.plugins.subscribe("editor-preview", makeHeadersSticky);
-      });
- 
       this.addSettingTab(new oBroSettingsTab(this.app, this));
 
       window.viewPagesRecent = async (dv, args) => {
@@ -382,8 +383,8 @@ export default class oBro extends Plugin {
          dv.span("- **`#p/NAME`** - project `NAME`");
       };
 
-      this.registerMarkdownCodeBlockProcessor("dash", (source, el, ctx) => {
-         console.log("dash", ctx, "Hello");
+      this.registerMarkdownCodeBlockProcessor("dash", (src, el, ctx) => {
+         console.log('dash', src, '<-- source', el, ctx);
          let cards = [
             {
                title: "Calendar",
@@ -426,11 +427,6 @@ export default class oBro extends Plugin {
             container.appendChild(dash.addCard(c.title, t));
          });
          el.appendChild(container);
-         // const container = createEl("div", { cls: "obro-container" });
-         // cards.forEach(c => {
-         //    container.appendChild(dash.addCard(c.title, c.content));
-         // });
-         // el.appendChild(container);
       });
 
       // (window.addMemoFields = (memoTitle, memoContent) => {
@@ -739,7 +735,7 @@ let tsks = {
       }
       // console.log(`oBro: sortTs`, this.overdue, this.thisWeek, this.nextWeek, this.started, this.notPrioritized, this.completed, this.sortTs);
       statusBar.children[0].setText(
-         `Overdue:${this.overdue.length} This Week:${this.thisWeek.length}`
+         `Overdue: ${this.overdue.length}  This Week: ${this.thisWeek.length}`
       );
       return;
    },
