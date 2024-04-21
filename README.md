@@ -65,12 +65,9 @@ _**Tasks**_, by Clare Macrae, adds due dates, recurring tasks, done dates and su
 10. Click the checkbox to enable the Tasks plugin
 
 
+# Basic Usage: Let's Do This!
 
-
-## Basic Usage: Let's Do This!
-
-
-#### Tasks: Wrangling the Chaos
+## Tasks: Wrangling the Chaos
 
 So, ready to tame the beast that is task management? Here's what you can do:
 
@@ -82,20 +79,19 @@ So, ready to tame the beast that is task management? Here's what you can do:
 
 Ready for some advanced maneuvers? Dive into our [[Args & Settings]] document for custom search paths and more. You can even hide files and directories from search, easily. With oBro, you're in control. Let's whip those tasks into shape!
 
-#### Tags
+## Tags
 
-#### Pages
+## Pages
 
 
 **View Recent Pages**: Get a peek at your recent activity with `viewPagesRecent`.
 
 ``` dataviewjs
 
+viewPagesRecent(dv)
+
 ```
 
-- Tasks
-- Tags
-- Pages
 Alright, let's get serious. Dive deep into oBro's data and querying features. Think of it as your trusty GPS for navigating the vast wilderness of your documents. Find what you need, take action, and get back to conquering the world – all in record time.
 
 ### Contributing: We're Better Together
@@ -123,34 +119,3 @@ So there you have it, folks – your crash course in all things oBro. Ready to r
 ## License
 ## Acknowledgements
 ## Contact Information
-## Badges
-## Screen Shots
-
------
-The content of your README.md file should be organized in a clear and structured manner to make it easy for users to navigate and find the information they need. Here's a suggested structure for organizing the content:
-
-1. **Title and Description**: Start with a clear and descriptive title for your plugin, followed by a brief description of what it does. This should be the first thing users see when they visit your repository.
-    
-2. **Table of Contents**: If your README is long or contains multiple sections, consider including a table of contents with links to each section. This allows users to quickly jump to the information they're interested in.
-    
-3. **Installation**: Provide clear, step-by-step instructions on how to install your plugin. This should include any prerequisites or dependencies that need to be installed beforehand.
-    
-4. **Usage**: Explain how users can use your plugin. Provide examples and code snippets to demonstrate common use cases. Make sure to cover all the major features and functionalities of your plugin.
-    
-5. **Configuration**: If your plugin requires any configuration settings, explain how users can configure them. Provide default configurations and explain what each option does.
-    
-6. **Documentation**: Include links to more detailed documentation if available. This could be in the form of a wiki, documentation website, or inline documentation within the code.
-    
-7. **Examples**: Include examples of how to use your plugin in real-world scenarios. This helps users understand how your plugin can solve their problems.
-    
-8. **Contributing**: Encourage contributions from the community by providing guidelines on how users can contribute to your plugin. This could include information on how to report bugs, submit feature requests, or contribute code.
-    
-9. **License**: Specify the license under which your plugin is distributed. This is important for users to understand their rights and obligations when using your plugin.
-    
-10. **Acknowledgements**: If your plugin is built on top of other projects or libraries, acknowledge them in your README. This helps give credit to the original authors and fosters a sense of community.
-    
-11. **Contact Information**: Provide contact information in case users have questions, feedback, or need support. This could be an email address, a link to a discussion forum, or a link to open issues on GitHub.
-    
-12. **Badges**: Include badges for things like build status, code coverage, or version number. These can provide useful information at a glance.
-    
-13. **Screenshots or GIFs**: If applicable, include screenshots or GIFs demonstrating your plugin in action. Visual aids can help users understand your plugin more quickly.
