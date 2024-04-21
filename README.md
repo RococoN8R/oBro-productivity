@@ -86,10 +86,12 @@ Ready for some advanced maneuvers? Dive into our [[Args & Settings]] document fo
 
 **View Recent Pages**: Get a peek at your recent activity with `viewPagesRecent`.
 
-``` dataviewjs
+```
+\``` dataviewjs
 
 viewPagesRecent(dv)
 
+\```
 ```
 
 Alright, let's get serious. Dive deep into oBro's data and querying features. Think of it as your trusty GPS for navigating the vast wilderness of your documents. Find what you need, take action, and get back to conquering the world – all in record time.
