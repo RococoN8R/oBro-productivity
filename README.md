@@ -7,20 +7,7 @@ Alright, so listen up, this is just the beginning. We're talking baby steps in t
 ## First, my gratuitous plead for help
 Making magic happen isn't easy (or cheap). That's where you come in! If you're inspired and want to show some love, consider buying me a coffee ☕️ to keep the creativity flowing and the updates rolling. Every sip counts, and your support means the world. Let's fuel this productivity train together! 
 
-Buy me a coffee 🙌✨
-
-## Now that Table of Contents You Wanted
-### ~~Recently Added Tools~~
-### Installation
-### Basic Usage
-### Settings
-## Detailed Documentation
-	Examples
-	APIs
-## Contributing
-## License
-## Acknowledgements
-## Contact Information
+<a href="https://www.buymeacoffee.com/RococoN8R" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" width=250></a> or <a href="https://ko-fi.com/U7U0X6N0Q" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" width=250></a>
 
 ## Recently Added Gizmos
 Alright, alright, don't get too excited. We're just dipping our toes in the water here, folks. This is all we've rustled up—for now, at least. Take a peek and see if any of these babies can jazz up your productivity game!
@@ -28,20 +15,21 @@ Alright, alright, don't get too excited. We're just dipping our toes in the wate
 ### Tasks: Your New Ride or Die
 
 Alright, let's talk tasks. Those pesky little things that can make or break your productivity flow. With oBro on your team, you're not just managing tasks – you're owning them. Add them to *any* Obsidian document in your vault, oBro collects them for you! Need to scope out your project? Easy peasy. Prioritizing like a pro? You got it. Brainstorming your next big idea? Absolutely. And with oBro, creativity flows smoother than butter on hot toast.
-![[Pasted image 20240421112510.png]]
+![[viewTasksPrioritized.png]]
 
 Now buckle up -- oBro's got your back with all the task states you could dream of! Let's break down how they're sorted in each of the reports.
-![[Pasted image 20240421111630.png]]
+![[viewTaskTypes.png]]
 
 
 ### Tags: Your Secret Sauce to Organization
 
 Tags aren't just for decoration, my friend. They're your secret weapons in the battle against chaos. Dive into our tag system and unlock a whole new level of organization. Whether you're sorting tasks, embedding them in bullets, or just tidying up your digital mess, oBro's got your back.
-![[Pasted image 20240421111244.png]]
+![[viewTags.png]]
+
 ### Bonus! Taming the Document Tsunami
 
 Feeling like you're drowning in a stormy sea of documents? Can't remember which note you updated yesterday? Relax, oBro's got your back! Easily track down recently modified pages, saving you time and keeping you from going nuts trying to find them. Just click on the file to open a new tab!
-![[Pasted image 20240421104920.png]]
+![[viewPagesRecent.png]]
 
 
 ## Installation: Let's Get Started
