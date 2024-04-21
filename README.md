@@ -16,7 +16,9 @@ Alright, alright, don't get too excited. We're just dipping our toes in the wate
 
 Alright, let's talk tasks. Those pesky little things that can make or break your productivity flow. With oBro on your team, you're not just managing tasks – you're owning them. Add them to *any* Obsidian document in your vault, oBro collects them for you! Need to scope out your project? Easy peasy. Prioritizing like a pro? You got it. Brainstorming your next big idea? Absolutely. And with oBro, creativity flows smoother than butter on hot toast.
 
-![Check status of prioritized items. Here's a quick view of what's due, what's in progress and what was recently completed](viewTasksPrioritized.png)
+<img src="images/viewTasksPrioritized.png" alt="Check status of prioritized items. Here's a quick view of what's due, what's in progress and what was recently completed" width=250>
+
+![Check status of prioritized items. Here's a quick view of what's due, what's in progress and what was recently completed](images/viewTasksPrioritized.png)
 
 Now buckle up -- oBro's got your back with all the task states you could dream of! Let's break down how they're sorted in each of the reports.
 ![[viewTaskTypes.png]]
