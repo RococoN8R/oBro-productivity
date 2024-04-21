@@ -20,20 +20,27 @@ Alright, let's talk tasks. Those pesky little things that can make or break your
 
 *Check status of prioritized items. Here's a quick view of what's due, what's in progress and what was recently completed.*
 
-
 Now buckle up -- oBro's got your back with all the task states you could dream of! Let's break down how they're sorted in each of the reports.
-![[viewTaskTypes.png]]
 
+<img src="images/viewTaskTypes.png" alt="View of task types available" width=400>
+
+*Numerous task types are available, enabling tiered prioritization*
 
 ### Tags: Your Secret Sauce to Organization
 
 Tags aren't just for decoration, my friend. They're your secret weapons in the battle against chaos. Dive into our tag system and unlock a whole new level of organization. Whether you're sorting tasks, embedding them in bullets, or just tidying up your digital mess, oBro's got your back.
-![[viewTags.png]]
+
+<img src="images/viewTags.png" alt="Tags collected from your vault" width=400>
+
+*Tags are collected from you entire vault. Just click on one to go straight to the document*
 
 ### Bonus! Taming the Document Tsunami
 
 Feeling like you're drowning in a stormy sea of documents? Can't remember which note you updated yesterday? Relax, oBro's got your back! Easily track down recently modified pages, saving you time and keeping you from going nuts trying to find them. Just click on the file to open a new tab!
-![[viewPagesRecent.png]]
+
+<img src="images/viewPagesRecent.png" alt="View pages most recently updated" width=400>
+
+*Add this to any document to easily find the documents you recently updated*
 
 
 ## Installation: Let's Get Started
