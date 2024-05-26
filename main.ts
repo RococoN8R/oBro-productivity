@@ -14,16 +14,16 @@ import {
 import { getAPI, DataviewApi } from "obsidian-dataview";
 
 interface oBroSettings {
-   searchTag: string;
-   viewList: boolean;
+   searchTags: string;
+   viewListItems: boolean;
    searchPath: string;
    viewHiddenFiles: boolean;
    taskHeaderSize: number;
 }
 
 const DEFAULT_SETTINGS: oBroSettings = {
-   searchTag: "",
-   viewList: false,
+   searchTags: "",
+   viewListItems: false,
    searchPath: "",
    viewHiddenFiles: false,
    taskHeaderSize: 5,
@@ -65,7 +65,6 @@ export default class oBro extends Plugin {
          statusBar.createEl("span", { text: "oBro's ready!" });
          statusBar.createEl("span", { text: "" });
          statusBar.createEl("span", { text: "" });
-
 
          // // register dataview command
          // this.addCommand({
@@ -141,8 +140,21 @@ export default class oBro extends Plugin {
          dv.header(5, "Page Management");
          dv.span("The following commands are available to manage pages:");
          dv.span("- **`viewPagesRecent(dv, args)`** - Lists pages sorted by last modified date");
+
+         dv.span("Use the following arguments to filter the pages displayed");
          dv.span(
-            "Use the following arguments to filter the pages: _searchPath_, _viewHiddenFiles_"
+            "- **`searchPath`** - Filter tasks by path\n" +
+               "\tExamples:\n" +
+               "\t\t`{searchPath: '.'}` searches just this page\n" +
+               "\t\t`{searchPath: '\"path/to/folder\"'}` searches a folder and subfolders\n" +
+               "\tOmitting the argument searches all pages"
+         );
+         dv.span(
+            "- **`viewHiddenFiles`** - Include hidden files in the search\n"
+            + "\tDirectories and files starting with `_` are hidden\n"
+            + "\tUse the argument to include them in the search\n"
+            + "\tExamples:\n"
+            + "\t\t`{viewHiddenFiles: true}`"
          );
       };
 
@@ -286,10 +298,18 @@ export default class oBro extends Plugin {
 
          dv.span("Use the following arguments to filter the tasks");
          dv.span(
-            "- **`searchPath`** - Filter tasks by path (e.g. -- `{searchPath: '\"path/to/folder\"'}`)"
+            "- **`searchPath`** - Filter tasks by path\n" +
+               "\tExamples:\n" +
+               "\t\t`{searchPath: '.'}` searches just this page\n" +
+               "\t\t`{searchPath: '\"path/to/folder\"'}` searches a folder and subfolders\n" +
+               "\tOmitting the argument searches all pages"
          );
          dv.span(
-            "- **`viewHiddenFiles`** - Include hidden files in the search (e.g. -- `{viewHiddenFiles: true}`)"
+            "- **`viewHiddenFiles`** - Include hidden files in the search\n"
+            + "\tDirectories and files starting with `_` are hidden\n"
+            + "\tUse the argument to include them in the search\n"
+            + "\tExamples:\n"
+            + "\t\t`{viewHiddenFiles: true}`"
          );
 
          dv.span("###### Task notations");
@@ -314,7 +334,8 @@ export default class oBro extends Plugin {
 
       window.viewTags = async (dv, args) => {
          tags.update(this.settings, dv, args);
-         tags.view(dv, "All Tags", tags.all);
+         // let list = tags.filter(ctx.searchTags);
+         // tags.view(dv, "Tags", list);
       };
 
       window.viewTagsAIs = async (dv, args) => {
@@ -357,34 +378,53 @@ export default class oBro extends Plugin {
          dv.header(tsks.headerSize, "Tag Management");
          dv.span("The following commands are available to manage tags:");
          dv.span("- **`viewTags(dv, args)`** - Lists tags sorted in alphabetical order");
-         dv.span("- **`viewTagsAIs(dv, args)`** - Lists action items");
-         dv.span("- **`viewTagsApps(dv, args)`** - Lists applications");
-         dv.span("- **`viewTagsDiscussions(dv, args)`** - Lists discussions");
-         dv.span("- **`viewTagsProjects(dv, args)`** - Lists projects");
+         // dv.span("- **`viewTagsAIs(dv, args)`** - Lists action items");
+         // dv.span("- **`viewTagsApps(dv, args)`** - Lists applications");
+         // dv.span("- **`viewTagsDiscussions(dv, args)`** - Lists discussions");
+         // dv.span("- **`viewTagsProjects(dv, args)`** - Lists projects");
 
          dv.span("Use the following arguments to filter the tags");
          dv.span(
-            "- **`searchTags`** - Filter tags by staring text (e.g. -- `{searchTags: '\"#ai\"'}`)"
+            "- **`searchTags`** - Filter tags by starting text\n"
+            + "\tExamples:\n"
+            + "\t\t`{searchTags: '#Proj1'}` - displays tags starting with #Proj1\n"
+            + "\t\t`{searchTags: ''}` - displays all tags\n"
+            + "\t\t`{searchTags: ['#Proj1', '#Proj2']}` - arrays may be used for a list of tags\n"
+            + "\tOmitting the argument displays all tags"
+
          );
          dv.span(
-            "- **`viewList`** - Include tags in list items/bullets (e.g. -- `{viewList: true}`"
+            "- **`viewListItems`** - Include tags in list items/bullets"
+            + "\tBy default, only tags in tasks are displayed.\n"
+            + "\tTags in list items are not included in the search\n"
+            + "\tUse the argument to include them in the search\n" 
+            + "\tExample:\n"
+            +"\t\t`{viewListItems: true}`"
          );
          dv.span(
-            "- **`searchPath`** - Filter tasks by path (e.g. -- `{searchPath: '\"path/to/folder\"'}`)"
+            "- **`searchPath`** - Filter tasks by path\n" +
+               "\tExamples:\n" +
+               "\t\t`{searchPath: '.'}` searches just this page\n" +
+               "\t\t`{searchPath: '\"path/to/folder\"'}` searches a folder and subfolders\n" +
+               "\tOmitting the argument searches all pages"
          );
          dv.span(
-            "- **`viewHiddenFiles`** - Include hidden files in the search (e.g. -- `{viewHiddenFiles: true}`)"
+            "- **`viewHiddenFiles`** - Include hidden files in the search\n"
+            + "\tDirectories and files starting with `_` are hidden\n"
+            + "\tUse the argument to include them in the search\n"
+            + "\tExample:\n"
+            + "\t\t`{viewHiddenFiles: true}`"
          );
 
-         dv.span("Use the following prefixes to filter the tags in `searchTags`");
-         dv.span("- **`#ai/NAME`** - action item with `NAME`");
-         dv.span("- **`#ap/APP`** - application `APP`");
-         dv.span("- **`#d/NAME`** - discussion with `NAME`");
-         dv.span("- **`#p/NAME`** - project `NAME`");
+         // dv.span("Use the following prefixes to filter the tags in `searchTags`");
+         // dv.span("- **`#ai/NAME`** - action item with `NAME`");
+         // dv.span("- **`#ap/APP`** - application `APP`");
+         // dv.span("- **`#d/NAME`** - discussion with `NAME`");
+         // dv.span("- **`#p/NAME`** - project `NAME`");
       };
 
       this.registerMarkdownCodeBlockProcessor("dash", (src, el, ctx) => {
-         console.log('dash', src, '<-- source', el, ctx);
+         console.log("dash", src, "<-- source", el, ctx);
          let cards = [
             {
                title: "Calendar",
@@ -462,7 +502,7 @@ export default class oBro extends Plugin {
 
    async loadSettings() {
       this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-      console.error(`oBro ${this.manifest.version}: Settings are loaded!`, await this.settings);
+      console.error(`oBro ${this.manifest.version}: Settings are loaded!`, this.settings);
    }
 
    async saveSettings() {
@@ -519,9 +559,9 @@ class oBroSettingsTab extends PluginSettingTab {
          .addText(text =>
             text
                .setPlaceholder("Enter the tag or leave blank for all.")
-               .setValue(this.plugin.settings.searchTag)
+               .setValue(this.plugin.settings.searchTags)
                .onChange(async value => {
-                  this.plugin.settings.searchTag = value;
+                  this.plugin.settings.searchTags = value;
                   await this.plugin.saveSettings();
                })
          );
@@ -529,8 +569,8 @@ class oBroSettingsTab extends PluginSettingTab {
          .setName("View List")
          .setDesc("Include bullets (list items) in the search. These are usually hidden from view.")
          .addToggle(toggle =>
-            toggle.setValue(this.plugin.settings.viewList).onChange(async value => {
-               this.plugin.settings.viewList = value;
+            toggle.setValue(this.plugin.settings.viewListItems).onChange(async value => {
+               this.plugin.settings.viewListItems = value;
                await this.plugin.saveSettings();
             })
          );
@@ -630,8 +670,8 @@ let ctx = {
    eonw: {},
    so4wa: {},
 
-   searchTag: null,
-   viewList: null,
+   searchTags: null,
+   viewListItems: null,
    searchPath: null,
    viewHiddenFiles: null,
    headerSize: {},
@@ -648,14 +688,14 @@ let ctx = {
    },
 
    updateCriteria(settings, dv, args) {
-      this.searchTag = settings.searchTag;
-      this.viewList = settings.viewList;
+      this.searchTags = settings.searchTags;
+      this.viewListItems = settings.viewListItems;
       this.searchPath = settings.searchPath;
       this.viewHiddenFiles = settings.viewHiddenFiles;
       this.headerSize = settings.taskHeaderSize;
       if (args) {
-         if (args.searchTag) this.searchTag = args.searchTag;
-         if (args.viewList) this.viewList = args.viewList;
+         if (args.searchTags) this.searchTags = args.searchTags;
+         if (args.viewListItems) this.viewListItems = args.viewListItems;
          if (args.searchPath) this.searchPath = args.searchPath;
          if (args.viewHiddenFiles) this.viewHiddenFiles = args.viewHiddenFiles;
       }
@@ -686,9 +726,10 @@ let tsks = {
    async getAll(dv, args) {
       this.all = [];
       this.getAllTs = null;
-      console.log("pages", dv.pages(ctx.searchPath));
+      // console.log("pages", dv.pages(ctx.searchPath), "path", ctx.searchPath, ".");
       try {
-         if (ctx.searchPath == ".") this.all = await dv.current().file.tasks;
+         if (ctx.searchPath == "." || ctx.searchPath == '"."')
+            this.all = await dv.current().file.tasks;
          else
             this.all = await dv
                .pages(ctx.searchPath)
@@ -700,6 +741,7 @@ let tsks = {
       // console.log(`oBro: getAllTs`, this.all, this.getAllTs, Date.now() - this.getAllTs);
       return;
    },
+
    async sort(dv) {
       this.overdue = [];
       this.thisWeek = [];
@@ -739,6 +781,7 @@ let tsks = {
       );
       return;
    },
+
    async update(settings, dv, args) {
       // console.log(`Settings: `, settings, dv, args);
       // console.log(`header size: `, settings.taskHeaderSize, tsks.headerSize);
@@ -747,6 +790,7 @@ let tsks = {
       await this.getAll(dv, args);
       await this.sort(dv);
    },
+
    async show(dv, title, tasks) {
       if (!tasks || !tasks.length) return;
       await dv.header(this.headerSize, title + " (" + tasks.length + ")");
@@ -767,9 +811,10 @@ let tags = {
    async getAll(dv, args) {
       this.all = [];
       this.tagTs = null;
-      console.log("ctx", ctx);
+      // console.log("ctx", ctx);
       try {
-         if (ctx.searchPath == ".") this.all = await dv.current().file.lists;
+         if (ctx.searchPath == '"."' || ctx.searchPath == ".")
+            this.all = await dv.current().file.lists.where(t => t.tags.length > 0);
          else
             this.all = await dv
                .pages(ctx.searchPath)
@@ -779,18 +824,34 @@ let tags = {
       } catch (err) {
          console.error("oBro: tags.getAll fail: ", err.message);
       }
-      let uniqueTags = Array.from(new Set(this.all.tags)).sort();
-      console.log(`oBro: tagTs`, this.all, uniqueTags, Date.now() - this.tagTs);
+   },
 
-      for (let t of uniqueTags) {
-         // console.log(`oBro: tag.all`, t, this.all);
-         await this.view(
+   async update(settings, dv, args) {
+      ctx.getContext(settings, dv, args);
+      // console.log(`oBro: tags.update`, args, settings, ctx);
+      await this.getAll(dv, args);
+      await tags.view(dv, ctx.searchTags);
+   },
+
+   async view(dv, search) {
+      let uniqueTags = Array.from(new Set(this.all.tags)).sort();
+      let filteredTags = [];
+
+      if (!search || search == "") filteredTags = uniqueTags;
+      else {
+         let filter = Array.isArray(search) ? search : [search];
+         filteredTags = uniqueTags.filter(t => filter.includes(t));
+      }
+      // console.log(`oBro: tagTs`, this.all, uniqueTags, filteredTags, Date.now() - this.tagTs);
+
+      for (let t of filteredTags) {
+         await this.viewTag(
             dv,
             t,
             this.all.where(
                w =>
                   w.tags.includes(t) &&
-                  (w.task || ctx.viewList) &&
+                  (w.task || ctx.viewListItems) &&
                   w.status != "x" &&
                   w.status != "-"
             )
@@ -798,18 +859,11 @@ let tags = {
       }
    },
 
-   async update(settings, dv, args) {
-      ctx.getContext(settings, dv, args);
-      console.log(`oBro: tags.update`, args, settings, ctx);
-      await this.getAll(dv, args);
-      console.log(`oBro: tags.update`, this.all);
-   },
-
-   async view(dv, title, tags) {
-      if (!tags || !tags.length) return;
-      await dv.header(this.headerSize, title + " (" + tags.length + ")");
-      // console.log(title, tags);
-      await dv.taskList(tags, false);
+   async viewTag(dv, title, tag) {
+      if (!tag || !tag.length) return;
+      await dv.header(this.headerSize, title + " (" + tag.length + ")");
+      // console.log(title, tag);
+      await dv.taskList(tag, false);
    },
 };
 
