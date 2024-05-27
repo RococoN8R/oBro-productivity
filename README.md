@@ -82,7 +82,7 @@ viewTasksPrioritized(dv)
 ```
 
 
-Ready for some advanced maneuvers? Check out our [[Advanced]] section to get the lowdown on custom search paths, tags and more. You can even hide files and directories from your search, easily. With oBro, you’re the boss. Time to whip those tasks into shape!
+Ready for some advanced maneuvers? Check out our [[#Advanced: Arguments with Purpose]] section to get the lowdown on custom search paths, tags and more. You can even hide files and directories from your search, easily. With oBro, you’re the boss. Time to whip those tasks into shape! 
 
 ## Tasks: Wrangling the Chaos
 
@@ -108,7 +108,7 @@ And it gets worse. You've captured a goldmine of ideas in one note. Now what? Go
 
 **Organize with Tags**: Meet your new best friend, `viewTags(dv)`! This tool collects all the tags in your Vault – topics, discussion points, projects, people, you name it. Every task with the same tag is neatly gathered together. Click on a tag to jump straight to the note and task. Or, if you're feeling super productive, click the checkbox to mark it done faster than you can say "Hashtag blessed."
 
-Got tags in list items (bullets) that aren't tasks? No worries! Check out our [[Advanced]] section to learn how to reveal those items, customize search paths, and more.
+Got tags in list items (bullets) that aren't tasks? No worries! Check out our [[#Advanced: Arguments with Purpose]] section to learn how to reveal those items, customize search paths, and more.
 
 Hungry for more? Use `helpTags(dv)` to uncover other awesome Tag tools we've recently added. Let's get tagging and transform that chaos into order!
 
@@ -166,13 +166,18 @@ So this isn't about the files your computer's operating system hides. By default
 
 Ready to level up your productivity game? With these advanced features, oBro puts you in the driver’s seat. Navigate your Vault like a pro, take control of your data, and get back to ruling the world, one task at a time. Let’s do this!
 
-## Settings: Hidden
+## Settings: Hidden Secrets to Change Defaults
 
+Hey there, champ! We know oBro's trying to get it right, but sometimes defaults just don't cut it for everyone. Wanna tweak those settings to make oBro truly yours? Whether it’s adjusting defaults for arguments like search paths or tags, or even the size of header text, we’ve got you covered. Here’s how to uncover these hidden secrets:
 
+1. Go to **Settings** in your [Obsidian](https://www.obsidian.md/). Then go to **Community Plugins** and disable **Safe Mode**. This enables JavaScript libraries to run in your plugins
+2. Click on the **Settings Gear** and and make your updates
+
+Boom! That’s it. Customize to your heart’s content and make oBro work exactly the way you want it to. Easy peasy, lemon squeezy!
 
 # Contributing: We're Better Together
 
-Calling all organization aficionados! Got ideas, bugs to squash, or just wanna chat? Hit us up. We're all about making oBro even more epic, one brainstorm at a time. Got a killer feature in mind? Don't hold back – let's make some magic happen together.
+Calling all organization aficionados! Got ideas, bugs to squash, or just wanna chat? Hit us up. We're all about making oBro even more epic, one brainstorm at a time. Got a killer feature in mind? Don't hold back – let's make some magic happen together. The [discussion is here](https://github.com/RococoN8R/oBro-productivity/discussions).
 
 # Support: Spread the Love
 
@@ -180,20 +185,6 @@ If oBro has been your saving grace and you're feeling the love, why not show us 
 
 <a href="https://www.buymeacoffee.com/RococoN8R" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" width=250></a> or <a href="https://ko-fi.com/U7U0X6N0Q" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" width=250></a>
 
+Curious about the license? Here's the oBro-productivity, aka oBro, [AGPL-3.0 license](https://github.com/RococoN8R/oBro-productivity?tab=AGPL-3.0-1-ov-file).
+
 So there you have it, folks – your crash course in all things oBro. Ready to revolutionize the way you work? Let's make productivity history together!
-
-
-
-
-## oBro Productivity Tools
-## Table of Contents
-## Installation
-## Usage
-## Settings
-## Detailed Documentation
-	Examples
-	APIs
-## Contributing
-## License
-## Acknowledgements
-## Contact Information
