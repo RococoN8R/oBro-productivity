@@ -128,12 +128,13 @@ Alright, it's time to get serious. Dive deep into oBro's data and querying featu
 *Filter tags by starting text*
 
 **Examples**
-`{searchTags: '#Proj1'}` displays tags starting with #Proj1
-`{searchTags: ['#Proj1', '#Proj2']}` use an array to list multiple tags
-`{searchTags: ''}` displays all tags
-Omitting the argument displays all tags
+- `{searchTags: '#Proj1'}` displays tags starting with #Proj1
+- `{searchTags: ['#Proj1', '#Proj2']}` use an array to list multiple tags
+- `{searchTags: ''}` displays all tags
+- Omitting the argument displays all tags
 
 **Pro Tips**
+
 Consider tagging projects, discussion points, action items and other categories using a consistent format. For instance, `#p/NAME` for projects (replace NAME with the project name), `#d/NAME` for people you want to discuss items with, and `#ai/NAME` for action items. Use `{searchTags: '#d/'}` to list all discussion points with each name, and `{searchTags: '#d/Mandy'}` to list just those with Mandy.
 
 
@@ -144,16 +145,16 @@ By default, only tags in tasks are displayed. Tags in list items (bullets) are e
 Set the argument to `true` to include list items in the search.
 
 **Example**
-`{viewListItems: true}`
+- `{viewListItems: true}`
 
 
 **`searchPath`**
 *Filter the results by custom file path*
 
 **Examples**
-`{searchPath: '.'}` searches just the current page
-`{searchPath: '"path/to/folder"'}` searches a specified folder and its subfolders
-Omitting the argument searches all folders in the Vault
+- `{searchPath: '.'}` searches just the current page
+- `{searchPath: '"path/to/folder"'}` searches a specified folder and its subfolders
+- Omitting the argument searches all folders in the Vault
 
 
 **`viewHiddenFiles`**
@@ -162,7 +163,7 @@ Omitting the argument searches all folders in the Vault
 So this isn't about the files your computer's operating system hides. By default, oBro skips files and directories starting with an underscore `_`. This helps "hide" archive information or other items you don’t generally want in your searches. But if you need to search those hidden files, just add `{viewHiddenFiles: true}` to the arguments.
 
 **Example**
-`{viewHiddenFiles: true}`
+- `{viewHiddenFiles: true}`
 
 Ready to level up your productivity game? With these advanced features, oBro puts you in the driver’s seat. Navigate your Vault like a pro, take control of your data, and get back to ruling the world, one task at a time. Let’s do this!
 
