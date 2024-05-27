@@ -1,7 +1,7 @@
 {
 	"name": "obro-productivity",
-	"version": "0.1.1",
-	"description": "oBro Productivity Tools - Alpha version",
+	"version": "0.2.0",
+	"description": "oBro Productivity Tools - Beta version.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

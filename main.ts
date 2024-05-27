@@ -375,6 +375,7 @@ export default class oBro extends Plugin {
       };
 
       window.helpTags = async (dv, args) => {
+         console.log(getAPI(window.app).pages());
          dv.header(tsks.headerSize, "Tag Management");
          dv.span("The following commands are available to manage tags:");
          dv.span("- **`viewTags(dv, args)`** - Lists tags sorted in alphabetical order");
