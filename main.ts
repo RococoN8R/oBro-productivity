@@ -915,36 +915,36 @@ let URL = {
 // ---------
 // Dashboard
 // ---------
-function insertGreekedTable() {
-   const editor = this.app.workspace.activeLeaf.view.sourceMode.cmEditor;
+// function insertGreekedTable() {
+//    // const editor = this.app.workspace.activeLeaf.view.sourceMode.cmEditor;
 
-   // Create the table element
-   const table = document.createElement("table");
+//    // // Create the table element
+//    // const table = document.createElement("table");
 
-   // Apply CSS styling
-   table.style.borderCollapse = "collapse";
-   table.style.width = "100%";
-   table.style.border = "1px solid black";
+//    // // Apply CSS styling
+//    // table.style.borderCollapse = "collapse";
+//    // table.style.width = "100%";
+//    // table.style.border = "1px solid black";
 
-   // Create table rows and cells with greeked text
-   for (let i = 0; i < 3; i++) {
-      const row = document.createElement("tr");
-      for (let j = 0; j < 2; j++) {
-         const cell = document.createElement("td");
-         cell.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-         cell.style.border = "1px solid black";
-         cell.style.padding = "8px";
-         row.appendChild(cell);
-      }
-      table.appendChild(row);
-   }
+//    // // Create table rows and cells with greeked text
+//    // for (let i = 0; i < 3; i++) {
+//    //    const row = document.createElement("tr");
+//    //    for (let j = 0; j < 2; j++) {
+//    //       const cell = document.createElement("td");
+//    //       cell.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+//    //       cell.style.border = "1px solid black";
+//    //       cell.style.padding = "8px";
+//    //       row.appendChild(cell);
+//    //    }
+//    //    table.appendChild(row);
+//    // }
 
-   // Convert the table element to markdown
-   const tableMarkdown = "```html\n" + table.outerHTML + "\n```";
-   console.log(tableMarkdown);
-   // Insert the markdown into the editor
-   editor.replaceSelection(tableMarkdown);
-}
+//    // // Convert the table element to markdown
+//    // const tableMarkdown = "```html\n" + table.outerHTML + "\n```";
+//    // console.log(tableMarkdown);
+//    // // Insert the markdown into the editor
+//    // editor.replaceSelection(tableMarkdown);
+// }
 
 let dash = {
    addCard(title, content) {
