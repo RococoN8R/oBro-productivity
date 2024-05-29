@@ -919,7 +919,7 @@ let URL = {
 //    // const editor = this.app.workspace.activeLeaf.view.sourceMode.cmEditor;
 
 //    // // Create the table element
-//    // const table = document.createElement("table");
+//    // const table = document.createElement("table"); 
 
 //    // // Apply CSS styling
 //    // table.style.borderCollapse = "collapse";
@@ -951,7 +951,7 @@ let dash = {
       const card = createEl("div", { cls: "obro-card" });
       card.appendChild(createEl("div", { text: title, cls: "obro-card-title" }));
       card.appendChild(createEl("div", { text: "" }));
-      card.innerHTML += content;
+      // card.innerHTML += content; 
       return card;
    },
 };
