@@ -951,7 +951,7 @@ let dash = {
       const card = createEl("div", { cls: "obro-card" });
       card.appendChild(createEl("div", { text: title, cls: "obro-card-title" }));
       card.appendChild(createEl("div", { text: "" }));
-      // card.innerHTML += content; 
+      // card.innerHTML += content;  
       return card;
    },
 };
