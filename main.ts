@@ -870,7 +870,7 @@ let tags = {
 
 // -----------
 // URL pasting
-// -----------
+// ----------- 
 
 let URL = {
    isValidURL(url): boolean {
