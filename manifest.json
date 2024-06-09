@@ -1,10 +1,10 @@
 {
 	"id": "obro-productivity",
-	"name": "oBro Productivity Tools",
+	"name": "oBro Task & Tag Tools",
 	"version": "0.2.0",
-	"minAppVersion": "0.15.0",
+	"minAppVersion": "1.5.12",
 	"description": "oBro: Wrangle Chaos, Conquer Productivity, Boss.",
-	"author": "RococoN8R - Ray Bellantoni, Copyright 2024, all rights reserved.",
+	"author": "RococoN8R - Ray Bellantoni",
 	"authorUrl": "https://github.com/RococoN8R",
 	"isDesktopOnly": false,
 	"fundingUrl": {

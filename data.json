@@ -1,7 +1,7 @@
 {
-  "searchTag": "",
-  "viewList": false,
+  "searchTags": "",
+  "viewListItems": false,
   "searchPath": "",
   "viewHiddenFiles": false,
-  "taskHeaderSize": 1
+  "taskHeaderSize": 5
 }

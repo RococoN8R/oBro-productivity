@@ -1,7 +1,7 @@
 {
 	"name": "obro-productivity",
 	"version": "0.2.0",
-	"description": "oBro Productivity Tools - Beta version.",
+	"description": "oBro Task & Tag Productivity Tools - Beta version.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
@@ -10,14 +10,14 @@
 	},
 	"keywords": [],
 	"author": "ray@bellantoni.org",
-	"license": "TBD",
+	"license": "AGPL-3.0",
 	"devDependencies": {
 		"@types/node": "^16.11.6",
 		"@typescript-eslint/eslint-plugin": "5.29.0",
 		"@typescript-eslint/parser": "5.29.0",
 		"builtin-modules": "3.3.0",
 		"esbuild": "0.17.3",
-		"obsidian": "latest",
+		"obsidian": "1.5.12",
 		"obsidian-dataview": "^0.5.66",
 		"tslib": "2.4.0",
 		"typescript": "4.7.4"
