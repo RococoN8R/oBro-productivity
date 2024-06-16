@@ -1,4 +1,4 @@
-"use strict;"
+// "use strict;"
 
 import { create } from "domain"
 import {
