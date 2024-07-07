@@ -47,9 +47,9 @@ export default class oBro extends Plugin {
 
          // console.log(`oBro ${this.manifest.version}: DataView plugin is ready.`)
 
-         this.addRibbonIcon("waypoints", "oBro", () => {
-            new Notice("oBro's ready!")
-         })
+         // this.addRibbonIcon("waypoints", "oBro", () => {
+         //    new Notice("oBro's ready!")
+         // })
 
          statusBar = this.addStatusBarItem()
 
@@ -74,9 +74,9 @@ export default class oBro extends Plugin {
 
          ctx.getContext(this.settings, dv, args)
          // suppress this page only, it is not a valid report
-         if (ctx.searchPath == ".") ctx.searchPath = ""
+         // if (ctx.searchPath == ".") ctx.searchPath = ""
          let p = await dv
-            .pages(ctx.searchPath == "." ? "" : ctx.searchPath)
+            .pages((ctx.searchPath == '.' || ctx.searchPath == '"."') ? '' : ctx.searchPath)
             .sort(t => -t.file.mtime.ts)
          await dv.table(
             [
@@ -690,7 +690,7 @@ let tsks = {
       this.getAllTs = null
       // console.log("pages", dv.pages(ctx.searchPath), "path", ctx.searchPath, ".");
       try {
-         if (ctx.searchPath == "." || ctx.searchPath == '"."')
+         if (ctx.searchPath == '.' || ctx.searchPath == '"."')
             this.all = await dv.current().file.tasks
          else
             this.all = await dv
@@ -700,7 +700,7 @@ let tsks = {
       } catch (err) {
          console.error("oBro: tsks.getAll fail: ", err.message, ctx.searchPath)
       }
-      // console.log(`oBro: getAllTs`, this.all, this.getAllTs, Date.now() - this.getAllTs);
+      console.log(`oBro: getAllTs`, this.all, this.getAllTs, Date.now() - this.getAllTs);
       return
    },
 
@@ -738,9 +738,9 @@ let tsks = {
          console.error("oBro: tsks.sort fail: ", err.message)
       }
       // console.log(`oBro: sortTs`, this.overdue, this.thisWeek, this.nextWeek, this.started, this.notPrioritized, this.completed, this.sortTs);
-      statusBar.children[0].setText(
-         `Overdue: ${this.overdue.length}  This week: ${this.thisWeek.length}`
-      )
+      // statusBar.children[0].setText(
+      //    `Overdue: ${this.overdue?.length}  This week: ${this.thisWeek?.length}`
+      // )
       return
    },
 
