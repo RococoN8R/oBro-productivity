@@ -1,6 +1,6 @@
 {
 	"name": "obro-productivity",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "oBro Task & Tag Productivity Tools - Beta version.",
 	"main": "main.js",
 	"scripts": {
